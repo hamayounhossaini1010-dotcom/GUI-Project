@@ -1,36 +1,4 @@
-Role: Act as a Senior C++ Software Architect specializing in Qt 6 and modern CMake build systems.
-> **Context:** The user is migrating a robust console-based Student Grade Management System to a Qt 6 GUI application. Previous attempts encountered linker errors (`undefined symbol: qMain`) and build configuration conflicts. A clean, professional-grade migration is required.
-> **Objective:** Provide a production-grade refactoring of the console-based C++ logic into a Qt 6 GUI application.
-> **Technical Requirements:**
-> 1. **Code Integrity:** Maintain the existing business logic, class architecture (`Student`, `SubjectScores`, `User`), and file I/O operations exactly as provided. Focus exclusively on presentation and event handling.
-> 2. **Interface Refactoring:**
-> * Replace console I/O (`std::cin`/`std::cout`) with Qt components.
-> * Use a `QtStreamBuffer` to redirect `std::cout` to a `QTextEdit` widget.
-> * Utilize `QStackedWidget` to map the existing CLI menu structure to GUI pages.
-> * Map all UI slots correctly to the business logic.
-> 
-> 
-> 3. **Modern Build Configuration:** Provide a clean `CMakeLists.txt` that utilizes `qt_standard_project_setup()` and `qt_add_executable()`. Explicitly avoid legacy MOC/include configurations that trigger path conflicts or linker errors.
-> 4. **Deliverables:**
-> * A fully compliant `CMakeLists.txt`.
-> * A verified, modern `mainwindow.ui` (XML) file that satisfies Qt 6 `uic` requirements.
-> * The updated `mainwindow.h` and `mainwindow.cpp` header/source files.
-> * The standard `main.cpp` entry point configured for Qt 6.
-> 
-> 
-> 
-> 
-> **Constraints:** Ensure the UI XML is clean and free of legacy tags.
-> ** IMPORTANT NOTICE:**
-> Adhere to these technical requirements for the provided Qt 6 migration to prevent build errors:
-> 1. **Avoid Redundant Build Configuration:** Do NOT include manual `target_include_directories` or `set_target_properties(AUTOMOC_MOC_OPTIONS ...)` in the `CMakeLists.txt`. Modern Qt 6 and `qt_standard_project_setup()` are being used; manual include path overrides cause linker conflicts and `qMain` symbol errors.
-> 2. **Clean UI/XML Requirements:** The generated `mainwindow.ui` must be valid, modern Qt 6 XML. Avoid all legacy or "broken" XML syntax that triggers `AutoUic` subprocess errors.
-> 3. **Entry Point Integrity:** Ensure the `main.cpp` and `CMakeLists.txt` are configured strictly for the Qt 6 entry point (`libQt6EntryPoint.a`) to prevent `undefined symbol: qMain` linker errors.
-> 4. **No Code Refactoring:** Maintain the original class structures and business logic exactly as provided. Focus the migration strictly on the transition from console I/O to the `QStackedWidget` GUI.
-> 
-> 
-> **Source Code for Reference:**
-> [#include <iostream>
+#include <iostream>
 #include <fstream>
 #include <iomanip>
 #include <string>
