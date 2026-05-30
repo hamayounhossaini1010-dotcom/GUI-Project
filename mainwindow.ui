@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Student Grade Management System</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <widget class="QWidget" name="pageLogin">
+       <layout class="QVBoxLayout" name="loginLayout">
+        <item>
+         <spacer name="loginTopSpacer">
+          <property name="orientation"><enum>Qt::Vertical</enum></property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelLoginTitle">
+          <property name="text"><string>Student Grade Management System</string></property>
+          <property name="alignment"><set>Qt::AlignCenter</set></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelLoginSubtitle">
+          <property name="text"><string>User Login Portal</string></property>
+          <property name="alignment"><set>Qt::AlignCenter</set></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="loginFrame">
+          <property name="frameShape"><enum>QFrame::StyledPanel</enum></property>
+          <layout class="QFormLayout" name="loginFormLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="labelUsername">
+             <property name="text"><string>Username:</string></property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="lineEditUsername"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="labelPassword">
+             <property name="text"><string>Password:</string></property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="lineEditPassword">
+             <property name="echoMode"><enum>QLineEdit::Password</enum></property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="2">
+            <widget class="QLabel" name="labelLoginStatus">
+             <property name="text"><string></string></property>
+             <property name="alignment"><set>Qt::AlignCenter</set></property>
+            </widget>
+           </item>
+           <item row="3" column="0" colspan="2">
+            <widget class="QPushButton" name="btnLogin">
+             <property name="text"><string>Login</string></property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="loginBottomSpacer">
+          <property name="orientation"><enum>Qt::Vertical</enum></property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="pageMenu">
+       <layout class="QVBoxLayout" name="menuLayout">
+        <item>
+         <widget class="QLabel" name="labelMenuTitle">
+          <property name="text"><string>Student Grade Management Core System</string></property>
+          <property name="alignment"><set>Qt::AlignCenter</set></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelCurrentUser">
+          <property name="text"><string>Logged in as: </string></property>
+          <property name="alignment"><set>Qt::AlignCenter</set></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnMenuAddGrade">
+          <property name="text"><string>1. Grade Entry and Modification</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnMenuStats">
+          <property name="text"><string>2. Grade Statistics by Class</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnMenuQuery">
+          <property name="text"><string>3. Grade Query Portal</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnMenuReport">
+          <property name="text"><string>4. Grade Report Generation</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnMenuSave">
+          <property name="text"><string>5. Save Data</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnMenuExportCSV">
+          <property name="text"><string>6. Export Grades to CSV</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnMenuBackup">
+          <property name="text"><string>7. Backup Data  [Admin Only]</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnMenuRestore">
+          <property name="text"><string>8. Restore Data from Backup  [Admin Only]</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnMenuLogout">
+          <property name="text"><string>0. Logout</string></property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="pageAddGrade">
+       <layout class="QVBoxLayout" name="addGradeLayout">
+        <item>
+         <widget class="QLabel" name="labelAddTitle">
+          <property name="text"><string>Grade Entry and Modification</string></property>
+          <property name="alignment"><set>Qt::AlignCenter</set></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="addGradeFrame">
+          <property name="frameShape"><enum>QFrame::StyledPanel</enum></property>
+          <layout class="QFormLayout" name="addGradeFormLayout">
+           <item row="0" column="0"><widget class="QLabel" name="lSemester"><property name="text"><string>Semester:</string></property></widget></item>
+           <item row="0" column="1"><widget class="QLineEdit" name="lineEditSemester"/></item>
+           <item row="1" column="0"><widget class="QLabel" name="lClass"><property name="text"><string>Class Name:</string></property></widget></item>
+           <item row="1" column="1"><widget class="QLineEdit" name="lineEditClass"/></item>
+           <item row="2" column="0"><widget class="QLabel" name="lID"><property name="text"><string>Student ID:</string></property></widget></item>
+           <item row="2" column="1"><widget class="QLineEdit" name="lineEditStudentID"/></item>
+           <item row="3" column="0"><widget class="QLabel" name="lName"><property name="text"><string>Student Name:</string></property></widget></item>
+           <item row="3" column="1"><widget class="QLineEdit" name="lineEditStudentName"/></item>
+           <item row="4" column="0"><widget class="QLabel" name="lChinese"><property name="text"><string>Chinese (0–100):</string></property></widget></item>
+           <item row="4" column="1"><widget class="QDoubleSpinBox" name="spinChinese"><property name="maximum"><double>100.0</double></property></widget></item>
+           <item row="5" column="0"><widget class="QLabel" name="lMath"><property name="text"><string>Math (0–100):</string></property></widget></item>
+           <item row="5" column="1"><widget class="QDoubleSpinBox" name="spinMath"><property name="maximum"><double>100.0</double></property></widget></item>
+           <item row="6" column="0"><widget class="QLabel" name="lEnglish"><property name="text"><string>English (0–100):</string></property></widget></item>
+           <item row="6" column="1"><widget class="QDoubleSpinBox" name="spinEnglish"><property name="maximum"><double>100.0</double></property></widget></item>
+           <item row="7" column="0"><widget class="QLabel" name="lComputer"><property name="text"><string>Computer (0–100):</string></property></widget></item>
+           <item row="7" column="1"><widget class="QDoubleSpinBox" name="spinComputer"><property name="maximum"><double>100.0</double></property></widget></item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelAddStatus">
+          <property name="text"><string></string></property>
+          <property name="alignment"><set>Qt::AlignCenter</set></property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout">
+          <item><widget class="QPushButton" name="btnAddGradeSubmit"><property name="text"><string>Submit</string></property></widget></item>
+          <item><widget class="QPushButton" name="btnAddGradeBack"><property name="text"><string>Back to Menu</string></property></widget></item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="pageStats">
+       <layout class="QVBoxLayout" name="statsLayout">
+        <item>
+         <widget class="QLabel" name="labelStatsTitle">
+          <property name="text"><string>Grade Statistics by Class</string></property>
+          <property name="alignment"><set>Qt::AlignCenter</set></property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout">
+          <item><widget class="QLabel" name="lStatsClass"><property name="text"><string>Class Name:</string></property></widget></item>
+          <item><widget class="QLineEdit" name="lineEditStatsClass"/></item>
+          <item>
+           <widget class="QComboBox" name="comboStatsSort">
+            <item><property name="text"><string>Sort by Average (Desc)</string></property></item>
+            <item><property name="text"><string>Sort by Name (A-Z)</string></property></item>
+           </widget>
+          </item>
+          <item><widget class="QPushButton" name="btnStatsSearch"><property name="text"><string>Search</string></property></widget></item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="textEditStats">
+          <property name="readOnly"><bool>true</bool></property>
+          <property name="fontFamily"><string>Courier New</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnStatsBack"><property name="text"><string>Back to Menu</string></property></widget>
+        </item>
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="pageQuery">
+       <layout class="QVBoxLayout" name="queryLayout">
+        <item>
+         <widget class="QLabel" name="labelQueryTitle">
+          <property name="text"><string>Grade Query Portal</string></property>
+          <property name="alignment"><set>Qt::AlignCenter</set></property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout">
+          <item>
+           <widget class="QRadioButton" name="radioQueryByID">
+            <property name="text"><string>Search by Student ID</string></property>
+            <property name="checked"><bool>true</bool></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioQueryFailing">
+            <property name="text"><string>View Failing Directory</string></property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout">
+          <item><widget class="QLabel" name="lQueryID"><property name="text"><string>Student ID:</string></property></widget></item>
+          <item><widget class="QLineEdit" name="lineEditQueryID"/></item>
+          <item><widget class="QPushButton" name="btnQuerySearch"><property name="text"><string>Search</string></property></widget></item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="textEditQuery">
+          <property name="readOnly"><bool>true</bool></property>
+          <property name="fontFamily"><string>Courier New</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnQueryBack"><property name="text"><string>Back to Menu</string></property></widget>
+        </item>
+       </layout>
+      </widget>
+
+      <widget class="QWidget" name="pageReport">
+       <layout class="QVBoxLayout" name="reportLayout">
+        <item>
+         <widget class="QLabel" name="labelReportTitle">
+          <property name="text"><string>Grade Report Generation</string></property>
+          <property name="alignment"><set>Qt::AlignCenter</set></property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout">
+          <item><widget class="QLabel" name="lReportClass"><property name="text"><string>Class Name:</string></property></widget></item>
+          <item><widget class="QLineEdit" name="lineEditReportClass"/></item>
+          <item><widget class="QPushButton" name="btnReportGenerate"><property name="text"><string>Generate Report</string></property></widget></item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="textEditReport">
+          <property name="readOnly"><bool>true</bool></property>
+          <property name="fontFamily"><string>Courier New</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnReportBack"><property name="text"><string>Back to Menu</string></property></widget>
+        </item>
+       </layout>
+      </widget>
+
+     </widget>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEditOutput">
+      <property name="maximumHeight"><number>80</number></property>
+      <property name="readOnly"><bool>true</bool></property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
